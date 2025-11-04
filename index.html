@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="vietnamese">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FinCode - Python trong kinh tế và kinh doanh</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Pyodide: runs Python in the browser -->
+  <script defer src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- ===== Header / Nav ===== -->
+  <header>
+  <div class="container nav">
+    <div class="brand">
+      <div class="logo">
+        <img src="logocte.png" alt="FTU Logo" class="nav-logo">
+      </div>
+      <div class="logo">
+        <img src="logoftu.png" alt="CTE Logo" class="nav-logo">
+      </div>
+      <h1>FinCode</h1>
+    </div>
+    <nav>
+      <a class="btn" href="#learn">Học</a>
+      <a class="btn" href="#about">Giới thiệu</a>
+    </nav>
+  </div>
+</header>
+  <!-- ===== Hero ===== -->
+  <section class="hero" id="home">
+    <div class="container hero-wrap">
+      <div>
+        <h2>Python trong kinh tế và kinh doanh</h2>
+        <p class="muted">
+          Sản phẩm của CLB CTE - FTU<br>
+          Dành cho học sinh, sinh viên công nghệ, kinh tế và kinh doanh muốn khám vá lĩnh vực: <strong>Phân tích dữ liệu trong kinh tế và kinh doanh</strong>.
+        </p>
+        <div class="badges">
+          <span class="badge">Không cần tải về</span>
+          <span class="badge">Hỗ trợ ngay</span>
+          <span class="badge">Thân thiện với người mới</span>
+        </div>
+      </div>
+      <div class="panel">
+        <p style="margin:0 0 6px"><strong>Bài học hôm nay</strong></p>
+        <p class="muted" style="margin:0">Tính lợi nhuận hàng thánh từ doanh thu và giá, rồi tính lợi nhuận trung bình</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Learn Section ===== -->
+  <main class="container" id="learn">
+    <section class="lesson card">
+      <div class="lesson-head">
+        <h3>Bài 1 - Lợi nhuận và lợi nhuận trung bình</h3>
+        <p class="muted">Yêu cầu: Nhập code để tạo mục <code>profit</code> list và tính <code>avg_profit</code>.</p>
+      </div>
+
+      <div class="io-grid">
+        <div class="editor-wrap">
+          <div class="editor-head">
+  <span>Trình soạn thảo Python</span>
+  <small class="muted" id="pyodide-status">Đang tải Python…</small>
+</div>
+          <textarea id="editor" spellcheck="false">
+# Cho biết doanh thu và chi phí (12 tháng)
+# TODO 1: Tạo list "profit" sao cho profit[i] = revenue[i] - cost[i]
+# TODO 2: Tính lợi nhuận trung bình và gán vào "avg_profit"
+revenue = [120,130,150,160,170,190,210,220,210,200,180,170]
+cost    = [ 80, 85, 90, 95,100,110,120,125,130,120,110,100]
+
+profit = [r - c for r, c in zip(revenue, cost)]
+avg_profit = sum(profit) / len(profit)
+
+print("Lợi nhuận theo tháng:", profit)
+print("Lợi nhuận trung bình:", avg_profit)
+</textarea>
+
+          <div class="controls">
+  <button id="run" class="btn primary">▶ Chạy code</button>
+  <button id="hint" class="btn">💡 Gợi ý</button>
+  <button id="solution" class="btn">👀 Xem lời giải</button>
+  <button id="reset" class="btn">↻ Làm lại</button>
+  <span class="muted" id="check-status"></span>
+</div>
+</div>
+        <div class="output-wrap">
+          <div class="output-head">
+            <span>Kết quả Console</span>
+          </div>
+          <pre id="output" class="output"></pre>
+
+          <div class="assistant">
+            <div class="assistant-head">
+              <span>Trợ lí AI (Chỉ gợi ý)</span>
+            </div>
+            <div id="assistant-body" class="assistant-body muted">
+              Bạn hãy chạy code trước. Nếu kẹt bạn hãy bấm “Hint” nhé!
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== About ===== -->
+    <section id="about">
+      <h3 class="section-title">Về CTE - FTU</h3>
+      <div class="grid-3">
+        <article class="card">
+          <h4>Lịch sử</h4>
+          <p class="muted">CLB Khoa học công nghệ trong Kinh tế và Kinh doanh (CTE) trực thuộc Đoàn trường ĐH Ngoại thương, thành lập ngày 10/8/2022. Lễ thành lập  được diễn ra vào ngày 16/8/2022.</p>
+        </article>
+        <article class="card">
+          <h4>Sứ mệnh</h4>
+          <p class="muted">CTE nằm trong sứ mệnh chung đến năm 2030 của Nhà trường về thành lập các ngành học về Khoa học công nghệ nằm trong hệ thống dự án phát triển Khoa học công nghệ và dữ liệu của Ban Giám hiệu trường Đại học Ngoại thương.</p>
+        </article>
+        <article class="card">
+          <h4>Giá trị cốt lõi</h4>
+          <p class="muted">CLB giúp sinh viên rèn luyện kỹ năng công nghệ và phân tích dữ liệu để kết hợp hiệu quả kinh tế với CNTT. Hoạt động này vừa hỗ trợ sinh viên trong công việc tương lai, vừa góp phần vào mục tiêu xây dựng các ngành học mới của nhà trường như Kinh doanh số và Khoa học dữ liệu.</p>
+        </article>
+      </div>
+    </section>
+
+  <footer>
+    <div class="container">
+      <small>© 2026 CTE - FTU. FinCode: Python for Finance</small>
+    </div>
+  </footer>
+</body>
+</html>
